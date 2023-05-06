@@ -1,0 +1,3 @@
+> Add text box for download
+> Main icon in taskbar
+> 
