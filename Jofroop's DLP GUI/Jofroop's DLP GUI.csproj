@@ -86,8 +86,6 @@
     <Content Include="Resources\folder.ico" />
     <Content Include="Resources\toDo.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Output\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
