@@ -80,8 +80,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\mainIcon.ico" />
+    <Content Include="Resources\output.ico" />
+    <Content Include="Resources\dlp.exe" />
+    <Content Include="Resources\download.ico" />
+    <Content Include="Resources\folder.ico" />
     <Content Include="Resources\toDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Output\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

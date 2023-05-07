@@ -1,3 +1,5 @@
 > Add text box for download
 > Main icon in taskbar
-> 
+> Button to set location of the dlp gui
+> button to send to yt dlp download (maybe)
+> info button
