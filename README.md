@@ -1,4 +1,4 @@
 # Jofroop-DLP-GUI
-A GUI for Youtube-DLP
+A GUI for Youtube-DLP.
 
-Very simple because all I wanted was automation. Download the latest youtube DLP or whatever, open the folder icon and put it in the folder called JofroopsDLGGUI, make sure the file is called exactly "yt-dlp"
+Highly simple with not many addtional features. You input the link, and press the download button. The yt-dlp file has to be downloaded seperately. You can also set a custom output path.
