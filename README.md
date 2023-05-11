@@ -7,8 +7,9 @@ If there are any bugs like the program not saving file paths on restart, please 
 
 To do:
 - Add a green checkmark when the yt-dlp path is succesfully selected.
+- Add a confirmation when the file has finished downloading.
 - Remove the "reset seettings" button.
-- Add some settings like quality settings with checkboxes.
+- Add some settings like quality settings with checkboxes, or an mp3 option.
 - Provide a download link to the yt-dlp page.
 - Maybe even provide a way to automatically download the latest yt-dlp version.
 - Add download queue.
