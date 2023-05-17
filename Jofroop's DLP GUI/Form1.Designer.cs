@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.linkInput = new System.Windows.Forms.TextBox();
             this.downloadButton = new System.Windows.Forms.Button();
@@ -39,7 +40,8 @@
             this.dlpPathLabel = new System.Windows.Forms.Label();
             this.outputPathSet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.mp3Checkbox = new System.Windows.Forms.CheckBox();
+            this.audioOnlyCheckbox = new System.Windows.Forms.CheckBox();
+            this.allTooltips = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // linkInput
@@ -53,6 +55,7 @@
             this.linkInput.Size = new System.Drawing.Size(386, 79);
             this.linkInput.TabIndex = 0;
             this.linkInput.TabStop = false;
+            this.allTooltips.SetToolTip(this.linkInput, "Put the link in here.");
             // 
             // downloadButton
             // 
@@ -63,6 +66,7 @@
             this.downloadButton.Name = "downloadButton";
             this.downloadButton.Size = new System.Drawing.Size(79, 79);
             this.downloadButton.TabIndex = 1;
+            this.allTooltips.SetToolTip(this.downloadButton, "Click this button to initiate the download of the video.");
             this.downloadButton.UseVisualStyleBackColor = true;
             this.downloadButton.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -74,6 +78,9 @@
             this.openExe.Name = "openExe";
             this.openExe.Size = new System.Drawing.Size(79, 79);
             this.openExe.TabIndex = 2;
+            this.allTooltips.SetToolTip(this.openExe, "Use this button to select the yt-dlp file. You need to go to the yt-dlp Github an" +
+        "d download it, then press this button, nagivate to the file, and press \"open\" wh" +
+        "en it is selected.\r\n");
             this.openExe.UseVisualStyleBackColor = true;
             this.openExe.Click += new System.EventHandler(this.openExe_Click);
             // 
@@ -91,6 +98,7 @@
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(40, 40);
             this.helpButton.TabIndex = 4;
+            this.allTooltips.SetToolTip(this.helpButton, "Click this button to show some help.");
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
@@ -129,6 +137,8 @@
             this.outputPathSet.Name = "outputPathSet";
             this.outputPathSet.Size = new System.Drawing.Size(79, 79);
             this.outputPathSet.TabIndex = 3;
+            this.allTooltips.SetToolTip(this.outputPathSet, "Click this button, then naviage to the folder in which you want to download the v" +
+        "ideo to.\r\n");
             this.outputPathSet.UseVisualStyleBackColor = true;
             this.outputPathSet.Click += new System.EventHandler(this.outputPathSet_Click);
             // 
@@ -141,23 +151,26 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Output path";
             // 
-            // mp3Checkbox
+            // audioOnlyCheckbox
             // 
-            this.mp3Checkbox.AutoSize = true;
-            this.mp3Checkbox.Location = new System.Drawing.Point(12, 114);
-            this.mp3Checkbox.Name = "mp3Checkbox";
-            this.mp3Checkbox.Size = new System.Drawing.Size(68, 17);
-            this.mp3Checkbox.TabIndex = 10;
-            this.mp3Checkbox.Text = "mp3 only";
-            this.mp3Checkbox.UseVisualStyleBackColor = true;
-            this.mp3Checkbox.CheckedChanged += new System.EventHandler(this.mp3Checkbox_CheckedChanged);
+            this.audioOnlyCheckbox.AutoSize = true;
+            this.audioOnlyCheckbox.Location = new System.Drawing.Point(12, 114);
+            this.audioOnlyCheckbox.Name = "audioOnlyCheckbox";
+            this.audioOnlyCheckbox.Size = new System.Drawing.Size(75, 17);
+            this.audioOnlyCheckbox.TabIndex = 10;
+            this.audioOnlyCheckbox.Text = "Audio only";
+            this.allTooltips.SetToolTip(this.audioOnlyCheckbox, "When this option is selected, the program will only download the audio. The file " +
+        "format is still .webm, because YouTube only uploads .webm and .m4a, not .mp3 or " +
+        "others.");
+            this.audioOnlyCheckbox.UseVisualStyleBackColor = true;
+            this.audioOnlyCheckbox.CheckedChanged += new System.EventHandler(this.mp3Checkbox_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 139);
-            this.Controls.Add(this.mp3Checkbox);
+            this.Controls.Add(this.audioOnlyCheckbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.outputPathSet);
             this.Controls.Add(this.dlpPathLabel);
@@ -189,7 +202,8 @@
         private System.Windows.Forms.Label dlpPathLabel;
         private System.Windows.Forms.Button outputPathSet;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox mp3Checkbox;
+        private System.Windows.Forms.CheckBox audioOnlyCheckbox;
+        private System.Windows.Forms.ToolTip allTooltips;
     }
 }
 

@@ -27,6 +27,17 @@ namespace Jofroop_s_DLP_GUI
         {
             dlpPath = Properties.Settings.Default.dlpPath;
             outputPath = Properties.Settings.Default.outputPath;
+
+            // MessageBox.Show("dlpPath:" + dlpPath + "\noutputPath: " + outputPath);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.dlpPath = dlpPath;
+            Properties.Settings.Default.outputPath = outputPath;
+            Properties.Settings.Default.Save();
+
+            // MessageBox.Show("dlpPath:" + dlpPath + "\noutputPath: " + outputPath);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,8 +50,7 @@ namespace Jofroop_s_DLP_GUI
             {
                 if (linkInput.Text != "")
                 {
-                    //strCmdLine = "/c " + dlpPath + " " + linkInput.Text + " -o \"" + outputPath + "\\%(title)s-%(id)s.%(ext)s\"";
-                    strCmdLine = $"/c {dlpPath} {linkInput.Text} -o \"{outputPath}\\%(title)s-%(id)s.%(ext)s\" {mp3Option}";
+                    strCmdLine = $"/k {dlpPath} -F {linkInput.Text} -o \"{outputPath}\\%(title)s-%(id)s.%(ext)s\" {mp3Option}";
                     MessageBox.Show(strCmdLine);
                     System.Diagnostics.Process.Start("CMD.exe", strCmdLine);
                 }
@@ -73,13 +83,6 @@ namespace Jofroop_s_DLP_GUI
             MessageBox.Show(infoMessage, infoTitle, infoButtons, MessageBoxIcon.Question);
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.dlpPath = dlpPath;
-            Properties.Settings.Default.outputPath = outputPath;
-            Properties.Settings.Default.Save();
-        }
-
         private void outputPathSet_Click(object sender, EventArgs e)
         {
             outputDialogue.ShowDialog();
@@ -88,7 +91,7 @@ namespace Jofroop_s_DLP_GUI
 
         private void mp3Checkbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean(mp3Checkbox.CheckState))
+            if (Convert.ToBoolean(audioOnlyCheckbox.CheckState))
             {
                 mp3Option = "-f \"bestaudio\"";
             }
