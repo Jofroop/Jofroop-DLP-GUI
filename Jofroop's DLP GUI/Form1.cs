@@ -50,8 +50,8 @@ namespace Jofroop_s_DLP_GUI
             {
                 if (linkInput.Text != "")
                 {
-                    strCmdLine = $"/k {dlpPath} -F {linkInput.Text} -o \"{outputPath}\\%(title)s-%(id)s.%(ext)s\" {mp3Option}";
-                    MessageBox.Show(strCmdLine);
+                    strCmdLine = $"/k {dlpPath} {linkInput.Text} -o \"{outputPath}\\%(title)s-%(id)s.%(ext)s\" {mp3Option}";
+                    // MessageBox.Show(strCmdLine);
                     System.Diagnostics.Process.Start("CMD.exe", strCmdLine);
                 }
                 else
