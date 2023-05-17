@@ -11,6 +11,7 @@ namespace Jofroop_s_DLP_GUI
     {
         string dlpPath = "";
         string outputPath = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos) + "\\JofroopsDLPGUIOutput";
+        string mp3Option = "";
 
         string strCmdLine;
 
@@ -38,7 +39,8 @@ namespace Jofroop_s_DLP_GUI
             {
                 if (linkInput.Text != "")
                 {
-                    strCmdLine = "/c " + dlpPath + " " + linkInput.Text + " -o \"" + outputPath + "\\%(title)s-%(id)s.%(ext)s\"";
+                    //strCmdLine = "/c " + dlpPath + " " + linkInput.Text + " -o \"" + outputPath + "\\%(title)s-%(id)s.%(ext)s\"";
+                    strCmdLine = $"/c {dlpPath} {linkInput.Text} -o \"{outputPath}\\%(title)s-%(id)s.%(ext)s\" {mp3Option}";
                     MessageBox.Show(strCmdLine);
                     System.Diagnostics.Process.Start("CMD.exe", strCmdLine);
                 }
@@ -82,6 +84,19 @@ namespace Jofroop_s_DLP_GUI
         {
             outputDialogue.ShowDialog();
             outputPath = outputDialogue.SelectedPath;
+        }
+
+        private void mp3Checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(mp3Checkbox.CheckState))
+            {
+                mp3Option = "-f \"bestaudio\"";
+            }
+            else
+            {
+                mp3Option = "";
+            }
+            
         }
     }
 }
