@@ -16,3 +16,4 @@ To do:
 - Maybe even provide a way to automatically download the latest yt-dlp version.
 - Add download queue.
 - Add options for more file types with ffmpeg.
+- Dark mode.
